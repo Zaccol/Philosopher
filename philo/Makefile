@@ -6,7 +6,7 @@
 #    By: lzaccome <lzaccome@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/16 15:37:56 by lzaccome          #+#    #+#              #
-#    Updated: 2021/12/30 22:37:23 by lzaccome         ###   ########.fr        #
+#    Updated: 2021/12/30 23:51:39 by lzaccome         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = philo
 
 CC = clang
 
-CFLAGS =  -Wall -Wextra -Werror #-g3 -fsanitize=address
+CFLAGS =  -Wall -Wextra -Werror -g3 #-fsanitize=address
 
 SRCS =	srcs/main.c \
 		srcs/atoi.c \

@@ -6,7 +6,7 @@
 /*   By: lzaccome <lzaccome@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 05:02:58 by lzaccome          #+#    #+#             */
-/*   Updated: 2021/12/30 22:33:03 by lzaccome         ###   ########.fr       */
+/*   Updated: 2021/12/31 02:14:12 by lzaccome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	limit_meals(t_philo *p)
 	{
 		pthread_mutex_lock(&p->nb_meals);
 		p->meals++;
-		pthread_mutex_lock(&p->nb_meals);
+		pthread_mutex_unlock(&p->nb_meals);
 	}
 }
 
@@ -54,8 +54,8 @@ void	release_forks(t_philo *p)
 {
 	if (p->forks == 2)
 	{
-		pthread_mutex_unlock(&p->l_fork);
 		pthread_mutex_unlock(p->r_fork);
+		pthread_mutex_unlock(&p->l_fork);
 		p->forks = 0;
 	}
 	else if (p->forks == 1)

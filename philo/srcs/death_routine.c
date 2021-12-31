@@ -6,7 +6,7 @@
 /*   By: lzaccome <lzaccome@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 04:23:10 by lzaccome          #+#    #+#             */
-/*   Updated: 2021/12/30 21:18:34 by lzaccome         ###   ########.fr       */
+/*   Updated: 2021/12/31 02:18:21 by lzaccome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	*death_routine(void *philo)
 	long long	time;
 
 	p = (t_philo *)philo;
+	ft_pause(2);
 	while (!died(p) && !last_meal_ate(p))
 	{
 		pthread_mutex_lock(&p->time);
@@ -33,6 +34,7 @@ void	*death_routine(void *philo)
 		}
 		pthread_mutex_unlock(&p->stuff->display);
 		pthread_mutex_unlock(&p->time);
+		ft_pause(2);
 	}
 	return (NULL);
 }

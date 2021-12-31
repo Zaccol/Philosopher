@@ -6,7 +6,7 @@
 /*   By: lzaccome <lzaccome@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 18:52:25 by lzaccome          #+#    #+#             */
-/*   Updated: 2021/12/30 22:32:05 by lzaccome         ###   ########.fr       */
+/*   Updated: 2021/12/31 02:36:11 by lzaccome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	init_philo(t_stuff *stuff)
 	pthread_mutex_init(&stuff->begin, NULL);
 	while (i < stuff->nbr_philo)
 	{
+		stuff->philo[i].start_time = get_time(0);
 		stuff->philo[i].id = i + 1;
 		stuff->philo[i].last_ate = 0;
 		stuff->philo[i].meals = -1;
